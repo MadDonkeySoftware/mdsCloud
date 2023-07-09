@@ -1,0 +1,19 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "test:cov": "lerna run test:cov",
+    "publish": "lerna publish"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "lerna": "^7.1.1",
+    "typescript": "^5.1.6"
+  }
+}
