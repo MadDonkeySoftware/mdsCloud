@@ -6,7 +6,9 @@
     "build": "lerna run build",
     "test": "lerna run test",
     "test:cov": "lerna run test:cov",
-    "publish": "lerna publish"
+    "publish": "lerna publish",
+    "lint": "lerna run lint",
+    "format": "lerna run format"
   },
   "workspaces": [
     "packages/*"
