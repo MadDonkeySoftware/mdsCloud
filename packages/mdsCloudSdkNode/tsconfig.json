@@ -1,0 +1,22 @@
+{
+  // https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "target": "ES2015",
+    "declaration": true,
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "esModuleInterop": true, // for FormData
+
+    // Disable later
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "./src/**/*",
+  ]
+}
