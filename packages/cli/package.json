@@ -40,7 +40,7 @@
     "url": "https://github.com/MadDonkeySoftware/mdsCloud/issues"
   },
   "dependencies": {
-    "@maddonkeysoftware/mds-cloud-sdk-node": "file://../mdsCloudSdkNode",
+    "@maddonkeysoftware/mds-cloud-sdk-node": "file://../sdk-node",
     "cli-table": "^0.3.6",
     "commander": "^9.4.1",
     "crypto-js": "^4.1.1",
