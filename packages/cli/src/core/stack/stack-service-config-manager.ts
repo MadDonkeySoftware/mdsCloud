@@ -11,13 +11,13 @@ import { StackBuildArgs } from '../../types/stack-build-args';
 import { StackCredentials } from '../../types/stack-credentials';
 import { BaseBuilder } from './builders/base-builder';
 import { IdentityBuilder } from './builders/identity-builder';
-import { NotificationServiceBuilder } from './builders/notification-service-builder';
 import { RedisBuilder } from './builders/redis-builder';
-import { QueueServiceBuilder } from './builders/queue-service-builder';
-import { FileServiceBuilder } from './builders/file-service-builder';
-import { ServerlessFunctionsServiceBuilder } from './builders/serverless-functions-service-builder';
-import { DockerMinionBuilder } from './builders/docker-minion-builder';
-import { StateMachineServiceBuilder } from './builders/state-machine-service-builder';
+// import { NotificationServiceBuilder } from './builders/notification-service-builder';
+// import { QueueServiceBuilder } from './builders/queue-service-builder';
+// import { FileServiceBuilder } from './builders/file-service-builder';
+// import { ServerlessFunctionsServiceBuilder } from './builders/serverless-functions-service-builder';
+// import { DockerMinionBuilder } from './builders/docker-minion-builder';
+// import { StateMachineServiceBuilder } from './builders/state-machine-service-builder';
 
 export interface IStackServiceConfigManager {
   onStatusUpdate?: (string) => void;
@@ -254,33 +254,34 @@ export class StackServiceConfigManager implements IStackServiceConfigManager {
       new RedisBuilder(),
       new ElkBuilder(baseStackConfigDirectory),
       new IdentityBuilder(
-        settings.identityServiceSourceDirectory,
+        settings.mdsCloudSourceDirectory,
         baseStackConfigDirectory,
       ),
-      new NotificationServiceBuilder(
-        settings.notificationServiceSourceDirectory,
-        baseStackConfigDirectory,
-      ),
-      new QueueServiceBuilder(
-        settings.queueServiceSourceDirectory,
-        baseStackConfigDirectory,
-      ),
-      new FileServiceBuilder(
-        settings.fileServiceSourceDirectory,
-        baseStackConfigDirectory,
-      ),
-      new ServerlessFunctionsServiceBuilder(
-        settings.serverlessFunctionsServiceSourceDirectory,
-        baseStackConfigDirectory,
-      ),
-      new DockerMinionBuilder(
-        settings.dockerMinionServiceSourceDirectory,
-        baseStackConfigDirectory,
-      ),
-      new StateMachineServiceBuilder(
-        settings.stateMachineServiceSourceDirectory,
-        baseStackConfigDirectory,
-      ),
+      // TODO: Re-enable these
+      // new NotificationServiceBuilder(
+      //   settings.notificationServiceSourceDirectory,
+      //   baseStackConfigDirectory,
+      // ),
+      // new QueueServiceBuilder(
+      //   settings.queueServiceSourceDirectory,
+      //   baseStackConfigDirectory,
+      // ),
+      // new FileServiceBuilder(
+      //   settings.fileServiceSourceDirectory,
+      //   baseStackConfigDirectory,
+      // ),
+      // new ServerlessFunctionsServiceBuilder(
+      //   settings.serverlessFunctionsServiceSourceDirectory,
+      //   baseStackConfigDirectory,
+      // ),
+      // new DockerMinionBuilder(
+      //   settings.dockerMinionServiceSourceDirectory,
+      //   baseStackConfigDirectory,
+      // ),
+      // new StateMachineServiceBuilder(
+      //   settings.stateMachineServiceSourceDirectory,
+      //   baseStackConfigDirectory,
+      // ),
     ];
 
     builders.forEach((builder) => {

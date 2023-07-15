@@ -52,7 +52,7 @@ cmd.action(async (options: Options) => {
         type: e.promptType,
         initial: oldConfig ? oldConfig[e.key] : '',
         onState: removeTrailingSlash,
-      } as PromptObject),
+      }) as PromptObject,
   );
 
   try {

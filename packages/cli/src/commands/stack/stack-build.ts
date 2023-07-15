@@ -2,7 +2,7 @@
 // NOTE: the above is intentionally using node since that is the proper value after transpilation
 
 import { createCommand } from 'commander';
-import { readFile, mkdir, writeFile } from 'fs/promises';
+import { readFile, mkdir } from 'fs/promises';
 import { display } from '../../utils';
 import { join } from 'path';
 import { homedir } from 'os';

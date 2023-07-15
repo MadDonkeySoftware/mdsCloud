@@ -9,67 +9,13 @@ export type StackSettingsElement = {
 
 export const STACK_SETTINGS_ELEMENTS: StackSettingsElement[] = [
   {
-    key: 'identityServiceSourceDirectory',
+    key: 'mdsCloudSourceDirectory',
     queryPrompt:
-      'What folder does the "package.json" for IdentityService reside in on your local system?',
-    displayPrompt: 'Identity Service Source',
+      'What folder does the "package.json" for mdsCloud (the mono-repo) reside in on your local system?',
+    displayPrompt: 'Root Source Directory',
     isSourceDir: true,
     isSecret: false,
     displayOrder: 1,
-  },
-  {
-    key: 'notificationServiceSourceDirectory',
-    queryPrompt:
-      'What folder does the "package.json" for NotificationService reside in on your local system?',
-    displayPrompt: 'Notification Service Source',
-    isSourceDir: true,
-    isSecret: false,
-    displayOrder: 2,
-  },
-  {
-    key: 'queueServiceSourceDirectory',
-    queryPrompt:
-      'What folder does the "package.json" for QueueService reside in on your local system?',
-    displayPrompt: 'Queue Service Source',
-    isSourceDir: true,
-    isSecret: false,
-    displayOrder: 3,
-  },
-  {
-    key: 'fileServiceSourceDirectory',
-    queryPrompt:
-      'What folder does the "package.json" for FileService reside in on your local system?',
-    displayPrompt: 'File Service Source',
-    isSourceDir: true,
-    isSecret: false,
-    displayOrder: 4,
-  },
-  {
-    key: 'serverlessFunctionsServiceSourceDirectory',
-    queryPrompt:
-      'What folder does the "package.json" for ServerlessFunctionsService reside in on your local system?',
-    displayPrompt: 'Serverless Functions Service Source',
-    isSourceDir: true,
-    isSecret: false,
-    displayOrder: 5,
-  },
-  {
-    key: 'dockerMinionServiceSourceDirectory',
-    queryPrompt:
-      'What folder does the "package.json" for DockerMinionService reside in on your local system?',
-    displayPrompt: 'Docker Minion Service Source',
-    isSourceDir: true,
-    isSecret: false,
-    displayOrder: 6,
-  },
-  {
-    key: 'stateMachineServiceSourceDirectory',
-    queryPrompt:
-      'What folder does the "package.json" for StateMachineService reside in on your local system?',
-    displayPrompt: 'State Machine Service Source',
-    isSourceDir: true,
-    isSecret: false,
-    displayOrder: 7,
   },
   {
     key: 'defaultAdminPassword',
@@ -78,6 +24,6 @@ export const STACK_SETTINGS_ELEMENTS: StackSettingsElement[] = [
     displayPrompt: 'Default Admin Password',
     isSourceDir: false,
     isSecret: true,
-    displayOrder: 8,
+    displayOrder: 2,
   },
 ];

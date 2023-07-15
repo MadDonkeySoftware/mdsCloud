@@ -2,12 +2,8 @@ import { BaseBuilder } from './base-builder';
 import { join } from 'path';
 import { Service } from '../../types/docker-compose';
 import { StackBuildArgs } from '../../../types/stack-build-args';
-import { writeFile } from 'fs/promises';
 import { ChildProcess } from '../../../utils/child-process';
-import { compile } from 'handlebars';
 import { homedir } from 'os';
-import { ProviderConfTemplate } from '../templates/serverless-functions/provider-config';
-
 export class StateMachineServiceBuilder extends BaseBuilder {
   #getBaseConfigDirectory(): string {
     return join(this.baseStackConfigDirectory, 'stateMachineService', 'config');
@@ -43,7 +39,7 @@ export class StateMachineServiceBuilder extends BaseBuilder {
     }
   }
 
-  protected async writeConfigs(args: StackBuildArgs): Promise<void> {
+  protected async writeConfigs(/*args: StackBuildArgs*/): Promise<void> {
     // TODO: Update once configs are used
   }
 

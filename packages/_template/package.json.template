@@ -1,0 +1,38 @@
+{
+  "name": "TODO",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "author": "",
+  "homepage": "https://github.com/MadDonkeySoftware/mdsCloud#readme",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "directories": {
+    "dist": "dist"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MadDonkeySoftware/mdsCloud.git"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "clean": "rimraf ./dist",
+    "dev": "echo \"Error: no dev specified\" && exit 1",
+    "dev:server": "echo \"Error: no dev:server specified\" && exit 1",
+    "test": "NODE_ENV=test jest",
+    "test:cov": "NODE_ENV=test jest --coverage",
+    "test:cov:watch": "npm run test:watch:cov",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:watch:cov": "NODE_ENV=test jest --watchAll --coverage",
+    "lint": "eslint 'src/**'",
+    "pretty:check": "prettier -c ./src",
+    "pretty": "prettier -w ./src",
+    "format": "npm run pretty"
+  },
+  "bugs": {
+    "url": "https://github.com/MadDonkeySoftware/mdsCloud/issues"
+  }
+}

@@ -88,7 +88,7 @@ async function getEnvUrls() {
         message: getPrompt(e),
         type: e.promptType,
         onState: removeTrailingSlash,
-      } as PromptObject),
+      }) as PromptObject,
   );
 
   return prompts(query);

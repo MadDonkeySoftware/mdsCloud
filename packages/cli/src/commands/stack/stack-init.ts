@@ -59,7 +59,7 @@ cmd.action(async () => {
         initial: oldSettings ? oldSettings[e.key] : process.cwd(),
         validate: e.isSourceDir ? ensurePackageJsonExists : undefined,
         format: removeTrailingSlash,
-      } as PromptObject),
+      }) as PromptObject,
   );
 
   try {

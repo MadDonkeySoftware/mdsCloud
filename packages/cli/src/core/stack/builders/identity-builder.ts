@@ -1,4 +1,4 @@
-import { BaseBuilder } from './base-builder';
+import { BaseMdsServiceBuilder } from './base-mds-service-builder';
 import { join } from 'path';
 import { Service } from '../../types/docker-compose';
 import { StackBuildArgs } from '../../../types/stack-build-args';
@@ -12,7 +12,9 @@ import { EntryPointTemplate } from '../templates/identity/entry-point';
 import { homedir } from 'os';
 import { LocalDevConfTemplate } from '../templates/identity/localdev-config';
 
-export class IdentityBuilder extends BaseBuilder {
+export class IdentityBuilder extends BaseMdsServiceBuilder {
+  protected packageFolderName = 'identity';
+
   protected getBuilderIdentifier(): string {
     return 'Identity';
   }
@@ -20,7 +22,7 @@ export class IdentityBuilder extends BaseBuilder {
   protected async buildDockerImage(args: StackBuildArgs): Promise<void> {
     if (args.config.identity === 'local') {
       const imageBuildTask = new ChildProcess({
-        command: 'docker build -t local/mds-cloud-identity:latest .',
+        command: `docker build --build-arg SERVICE=${this.packageFolderName} -t local/mds-cloud-identity:latest .`,
         workingDir: this.sourceDirectory,
         logFile: join(
           homedir(),
@@ -31,7 +33,7 @@ export class IdentityBuilder extends BaseBuilder {
         ),
         onStart: () => {
           this.safeOnMilestoneAchieved(
-            `Building container locally at ${this.sourceDirectory}`,
+            `Building container locally: ${this.sourceDirectory}`,
           );
         },
       });
@@ -116,7 +118,7 @@ export class IdentityBuilder extends BaseBuilder {
       this.safeOnStatusUpdate('Generating localdev app config');
       const localDevConfTemplate = compile(LocalDevConfTemplate);
       await writeFile(
-        join(this.sourceDirectory, 'config', 'localdev.js'),
+        join(this.packageDirectory, 'config', 'localdev.js'),
         localDevConfTemplate({
           db_conn_string: `mongodb://${args.credentials.mongoRootUser}:${args.credentials.mongoRootPass}@localhost:27017/mds-identity`,
           private_key_path: join(

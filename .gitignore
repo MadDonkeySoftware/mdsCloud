@@ -109,3 +109,6 @@ dist
 
 # typescript outputs
 dist/
+
+# Project local dev configs
+**/config/local*.js

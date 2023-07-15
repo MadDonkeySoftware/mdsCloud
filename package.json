@@ -4,18 +4,20 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "build": "lerna run build",
-    "test": "lerna run test",
-    "test:cov": "lerna run test:cov",
-    "publish": "lerna publish",
+    "dev:identity:server": "npm -w identity run dev:server",
+    "format": "lerna run format",
     "lint": "lerna run lint",
-    "format": "lerna run format"
+    "publish": "lerna publish",
+    "refresh:cli": "npm -w mds-cloud-cli run prepublish:setup",
+    "test": "lerna run test",
+    "test:cov": "lerna run test:cov"
   },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
-    "@types/node": "^20.4.1",
-    "lerna": "^7.1.1",
+    "@types/node": "^20.4.2",
+    "lerna": "^7.1.4",
     "typescript": "^5.1.6"
   }
 }
